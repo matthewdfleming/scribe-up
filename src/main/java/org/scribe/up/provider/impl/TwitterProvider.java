@@ -33,7 +33,7 @@ public class TwitterProvider extends BaseOAuth10Provider {
     
     @Override
     protected void internalInit() {
-        service = new ServiceBuilder().provider(TwitterApi.class).apiKey(key).apiSecret(secret).callback(callbackUrl)
+        service = new ServiceBuilder().provider(TwitterApi.Authenticate.class).apiKey(key).apiSecret(secret).callback(callbackUrl)
             .build();
         // https://dev.twitter.com/docs/api/1/get/account/verify_credentials
         String[] names = new String[] {
